@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="'X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+      *{box-sizing: border-box;}
+        body{
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        .footer {
+              position: fixed;
+              left: 0;
+              bottom: 0;
+              height: 20%;
+              width: 100%;
+              background-color: #15432A;
+              color: white;
+              text-align: center;
+         }
+        
+        .header {
+          overflow: hidden;
+          background-color: #15432A;
+          padding: 0px 0px;
+        }
+        
+        .header a {
+          float: left;
+          color: antiquewhite;
+          text-align: center;
+          padding: 8px;
+          text-decoration: none;
+          font-size: 15px;
+          line-height: 25px;
+          border-radius: 4px;
+        }
+        
+         .header-right {
+          float: right;
+          margin-top: 25px;
+
+          @media screen and {max-width: 500px){
+            .header a {
+              float: none;
+              display: block;
+              text-align: left;
+            }
+            .header-right {
+              float: none;
+            }
+          }
+        
+                   
+        </style>
+        </head>
+        <body>
+        <div class="header">
+          <a><h1>URL SHORTNER</h1></a>
+
+          <div class="header-right">
+          <a class="active" href="{{ url_for("home") }}">Home</a>
+          <a href="{{ url_for("history") }}">History</a>
+        </div>
+        </div>  
+
+        <div class="footer">
+          <h4>URL Shortener for transforming long, ugly links into nice, memorable and trackable short URLs.
+             Use it to shorten links for any social media platforms, blogs, SMS, emails, ads, or pretty much anywhere else you want to share them. 
+             Twitter, Facebook, YouTube, Instagram, WhatsApp, emails, SMS, videos. </h4>
+        </div>
+         
+        {% block content %}
+
+        {% endblock %}
+        </body>
+        </html>
+        
